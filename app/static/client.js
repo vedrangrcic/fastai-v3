@@ -13,6 +13,7 @@ function showPicked(input) {
 }
 
 function analyze() {
+	el('result-label').innerHTML = '';
     var uploadFiles = el('file-input').files;
     if (uploadFiles.length != 1) alert('Please select 1 file to analyze!');
 
