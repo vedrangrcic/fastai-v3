@@ -32,6 +32,7 @@ function analyze() {
 
     var fileData = new FormData();
     fileData.append('file', uploadFiles[0]);
+    fileData.append('apiKey','something');
     xhr.send(fileData);
 }
 
