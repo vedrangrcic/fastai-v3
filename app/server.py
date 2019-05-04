@@ -8,7 +8,7 @@ from io import BytesIO
 from fastai import *
 from fastai.vision import *
 
-export_file_url = 'https://onedrive.live.com/download?cid=B64B3F2B0AD5009F&resid=B64B3F2B0AD5009F%211234&authkey=AE8varYJU7BWejI'
+export_file_url = 'https://onedrive.live.com/download?cid=B64B3F2B0AD5009F&resid=B64B3F2B0AD5009F%211234&authkey=AF-tWyYkp_EsjZA'
 export_file_name = 'cloudsocsingleunfrozen.pkl'
 
 classes = ['Altocumulus', 'Altostratus', 'Cirrocumulus', 'Cirrostratus', 'Cirrus', 'Cumulonimbus', 'Cumulus', 'Nimbostratus', 'NotACloud', 'Stratocumulus', 'Stratus']
