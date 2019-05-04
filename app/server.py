@@ -8,10 +8,10 @@ from io import BytesIO
 from fastai import *
 from fastai.vision import *
 
-export_file_url = 'https://drive.google.com/uc?export=download&id=1ip6PcVA9iplGvOudJoidYLcXcllBsH7u'
+export_file_url = 'https://onedrive.live.com/download?cid=B64B3F2B0AD5009F&resid=B64B3F2B0AD5009F%211234&authkey=AE8varYJU7BWejI'
 export_file_name = 'bestunfrozen.pkl'
 
-classes = ['altocumulus', 'altostratus', 'cirrocumulus', 'cirrostratus', 'cirrus', 'cumulonimbus', 'cumulus', 'nimbostratus', 'stratocumulus', 'stratus']
+classes = ['Altocumulus','Altostratus','Cirrocumulus','Cirrostratus','Cirrus','Cumulonimbus','Cumulus','Nimbostratus','NotACloud','Stratocumulus','Stratus']
 path = Path(__file__).parent
 
 app = Starlette()
