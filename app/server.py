@@ -51,7 +51,7 @@ def index(request):
 @app.route('/analyze', methods=['POST'])
 async def analyze(request):
     data = await request.form()
-    apiKey = await (data['apiKey'].read())
+    apiKey = data['apiKey']
     if apiKey !='7a966000-a16d-48eb-8186-d820fea2e48a':
         return JSONResponse({'result': 'Wrong API Key'})
     img_bytes = await (data['file'].read())
