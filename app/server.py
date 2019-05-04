@@ -52,8 +52,8 @@ def index(request):
 async def analyze(request):
     data = await request.form()
 	apiKey=await (data['apiKey'].read())
-	if apiKey !='7a966000-a16d-48eb-8186-d820fea2e48a':
-	    return JSONResponse({'result': 'Wrong API Key'})
+    if apiKey !='7a966000-a16d-48eb-8186-d820fea2e48a':
+        return JSONResponse({'result': 'Wrong API Key'})
     img_bytes = await (data['file'].read())
     img = open_image(BytesIO(img_bytes))
     prediction = learn.predict(img,thresh=0.2)[0]
