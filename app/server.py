@@ -3,12 +3,13 @@ from starlette.responses import HTMLResponse, JSONResponse
 from starlette.staticfiles import StaticFiles
 from starlette.middleware.cors import CORSMiddleware
 import uvicorn, aiohttp, asyncio
+import base64
 from io import BytesIO
 
 from fastai import *
 from fastai.vision import *
 
-export_file_url = 'https://onedrive.live.com/download?cid=B64B3F2B0AD5009F&resid=B64B3F2B0AD5009F%211234&authkey=AF-tWyYkp_EsjZA'
+export_file_url = 'https://onedrive.live.com/download?cid=B64B3F2B0AD5009F&resid=B64B3F2B0AD5009F%211234&authkey=AJ7x7MzKjgEiysA'
 export_file_name = 'cloudsocsingleunfrozen.pkl'
 
 classes = ['Altocumulus', 'Altostratus', 'Cirrocumulus', 'Cirrostratus', 'Cirrus', 'Cumulonimbus', 'Cumulus', 'Nimbostratus', 'NotACloud', 'Stratocumulus', 'Stratus']
@@ -55,6 +56,18 @@ async def analyze(request):
     if apiKey !='7a966000-a16d-48eb-8186-d820fea2e48a':
         return JSONResponse({'result': 'Wrong API Key'})
     img_bytes = await (data['file'].read())
+    img = open_image(BytesIO(img_bytes))
+    prediction = learn.predict(img,thresh=0.2)[0]
+    return JSONResponse({'result': str(prediction)})
+	
+	
+@app.route('/analyzeAPI', methods=['POST'])
+async def analyzeAPI(request):
+    data = await request.form()
+    apiKey = data['apiKey']
+    if apiKey !='7a966000-a16d-48eb-8186-d820fff2e48a':
+        return JSONResponse({'result': 'Wrong API Key'})
+    img_bytes = base64.b64decode(data['fileBase64'])
     img = open_image(BytesIO(img_bytes))
     prediction = learn.predict(img,thresh=0.2)[0]
     return JSONResponse({'result': str(prediction)})
