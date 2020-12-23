@@ -9,7 +9,7 @@ from io import BytesIO
 from fastai import *
 from fastai.vision import *
 
-export_file_url = 'https://onedrive.live.com/download?cid=B64B3F2B0AD5009F&resid=B64B3F2B0AD5009F%211234&authkey=AJ7x7MzKjgEiysA'
+export_file_url = 'https://omniadatageneral.blob.core.windows.net/nowjudgingcalendarcache/cloudsocsingleunfrozenNotShared.pk1?st=2020-12-23T20%3A08%3A54Z&se=2020-12-30T20%3A08%3A00Z&sp=rl&sv=2018-03-28&sr=b&sig=cSoh0aCmyNohb1KzG5jfcSyKPF1KFdTD%2BcRjq0Gh4lk%3D'
 export_file_name = 'cloudsocsingleunfrozen.pkl'
 
 classes = ['Altocumulus', 'Altostratus', 'Cirrocumulus', 'Cirrostratus', 'Cirrus', 'Cumulonimbus', 'Cumulus', 'Nimbostratus', 'NotACloud', 'Stratocumulus', 'Stratus']
